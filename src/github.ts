@@ -210,11 +210,11 @@ export async function setSecretForRepo(
     if (environment) {
 
 
-      await octokit.rest.repos.createOrUpdateEnvironment({
-        owner: repo_owner,
-        repo: repo_name,
-        environment_name: environment,
-      })
+      // await octokit.rest.repos.createOrUpdateEnvironment({
+      //   owner: repo_owner,
+      //   repo: repo_name,
+      //   environment_name: environment,
+      // })
 
       return octokit.actions.createOrUpdateEnvironmentSecret({
         repository_id: repo.id,
