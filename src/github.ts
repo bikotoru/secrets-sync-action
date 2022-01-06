@@ -200,7 +200,6 @@ export async function setSecretForRepo(
 ): Promise<void> {
   const [repo_owner, repo_name] = repo.full_name.split("/");
 
-  
   const publicKey = await getPublicKey(octokit, repo, environment);
   const encrypted_value = encrypt(secret, publicKey.key);
 
@@ -208,13 +207,15 @@ export async function setSecretForRepo(
 
   if (!dry_run) {
     if (environment) {
-
-
-      // await octokit.rest.repos.createOrUpdateEnvironment({
-      //   owner: repo_owner,
-      //   repo: repo_name,
-      //   environment_name: environment,
-      // })
+      try {
+        await octokit.rest.repos.createOrUpdateEnvironment({
+          owner: repo_owner,
+          repo: repo_name,
+          environment_name: environment,
+        });
+      } catch (e) {
+        console.log(e);
+      }
 
       return octokit.actions.createOrUpdateEnvironmentSecret({
         repository_id: repo.id,

@@ -2,8 +2,8 @@
 name: "Secrets Sync Action"
 author: Justin Poehnelt
 branding:
-  icon: 'copy'  
-  color: 'red'
+  icon: "copy"
+  color: "red"
 description: "Copies secrets from the action's environment to many other repos."
 inputs:
   github_token:
@@ -63,5 +63,5 @@ inputs:
       environment with the name of this value.
     required: false
 runs:
-  using: 'node12'
-  main: 'dist/index.js'
+  using: "node12"
+  main: "dist/index.js"
