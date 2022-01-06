@@ -6162,11 +6162,11 @@ function setSecretForRepo(octokit, name, secret, repo, environment, dry_run) {
         core.info(`Set \`${name} = ***\` on ${repo.full_name}`);
         if (!dry_run) {
             if (environment) {
-                yield octokit.rest.repos.createOrUpdateEnvironment({
-                    owner: repo_owner,
-                    repo: repo_name,
-                    environment_name: environment,
-                });
+                // await octokit.rest.repos.createOrUpdateEnvironment({
+                //   owner: repo_owner,
+                //   repo: repo_name,
+                //   environment_name: environment,
+                // })
                 return octokit.actions.createOrUpdateEnvironmentSecret({
                     repository_id: repo.id,
                     environment_name: environment,
