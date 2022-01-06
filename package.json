@@ -15,7 +15,7 @@
   "author": "Justin Poehnelt",
   "main": "lib/index.js",
   "scripts": {
-    "all": "npm run build && npm run format-check && npm run lint && npm test && npm run pack",
+    "all": "npm run build && npm run format-check && npm run lint && npm run pack",
     "build": "tsc",
     "format": "prettier --write **/*.ts",
     "format-check": "prettier --check **/*.ts",
