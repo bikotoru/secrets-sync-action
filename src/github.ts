@@ -200,6 +200,7 @@ export async function setSecretForRepo(
 ): Promise<void> {
   const [repo_owner, repo_name] = repo.full_name.split("/");
 
+  
   const publicKey = await getPublicKey(octokit, repo, environment);
   const encrypted_value = encrypt(secret, publicKey.key);
 
