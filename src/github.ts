@@ -213,9 +213,7 @@ export async function setSecretForRepo(
           repo: repo_name,
           environment_name: environment,
         });
-      } catch (e) {
-
-      }
+      } catch (e) {}
 
       return octokit.actions.createOrUpdateEnvironmentSecret({
         repository_id: repo.id,
