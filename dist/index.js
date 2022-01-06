@@ -6170,7 +6170,6 @@ function setSecretForRepo(octokit, name, secret, repo, environment, dry_run) {
                     });
                 }
                 catch (e) {
-                    console.log(e);
                 }
                 return octokit.actions.createOrUpdateEnvironmentSecret({
                     repository_id: repo.id,
